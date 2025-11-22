@@ -23,11 +23,14 @@ fetch("https://api.npoint.io/ecccc07e4a1fcb159b26")
         firstPara.textContent = data.mishracommnication[0];
 
         // Services Card Creation
-        data.servicsCard.forEach((item, index) => {
+        data.servicsCard.forEach((item,index) => {
 
             let card = document.createElement("div");
-            card.classList.add("servicsCard5", "fadeIn");
+            card.classList.add("servicsCard5");
 
+            card.addEventListener("click",()=>{
+                window.location.href = data.links[index];
+            })
             // Optional: Add icons (automatic)
             let icon = `<span class="emoji">📱</span>`;
             if (item.toLowerCase().includes("recharge")) icon = `<span class="emoji">⚡</span>`;
