@@ -3,22 +3,22 @@ let batterystock = document.getElementById('batterstock');
 fetch('https://api.npoint.io/ecccc07e4a1fcb159b26')
     .then(res => res.json())
     .then(data => {
-        data.NECKBAND.name.forEach((item, index) => {
+        data.JioMobile.name.forEach((item, index) => {
             var div = document.createElement('div');
             div.classList.add("stock");
            var nameitems = document.createElement('p')
            var itemmrp = document.createElement('div')
            var itmesrate = document.createElement('div')
 
-           itemmrp.innerHTML =` MRP : ${data.NECKBAND.mrp[index]}`
-           itmesrate.innerHTML =` Rate : ${data.NECKBAND.rate[index]}`
+           itemmrp.innerHTML =` MRP : ${data.JioMobile.mrp[index]}`
+           itmesrate.innerHTML =` Rate : ${data.JioMobile.rate[index]}`
             
             var image = document.createElement('img');
             image.classList.add("stockimg")
-            image.src = data.NECKBAND.image[index];
+            image.src = data.JioMobile.image[index];
 
 
-            nameitems.innerHTML = data.NECKBAND.name[index];
+            nameitems.innerHTML = data.JioMobile.name[index];
 
             div.appendChild(image);
             div.appendChild(nameitems)
@@ -30,7 +30,7 @@ fetch('https://api.npoint.io/ecccc07e4a1fcb159b26')
             div.addEventListener("click",()=>{
                var dataone = {
                 "itemsname":  item,
-                "itemsmrp":data.NECKBAND.mrp[index],
+                "itemsmrp":data.Battery.mrp[index],
                 "name":"",
                 "whatappnumber": data.mishracommnication[1]
         
